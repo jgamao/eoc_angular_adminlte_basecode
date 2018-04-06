@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guard/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -12,101 +13,120 @@ const routes: Routes = [
   children: [
     {
       path: '',
-      component: HomeComponent
+      component: HomeComponent,
+      canActivate: [AuthGuard],
     }, {
       path: 'accordion',
       loadChildren: 'app/+accordion/accordion.module#AccordionModule',
       data: {
         title: 'Accordion'
-      }
+      },
+      canActivate: [AuthGuard],
     }, {
       path: 'alert',
       loadChildren: 'app/+alert/alert.module#AlertModule',
       data: {
         title: 'Alert',
-      }
+      },
+      canActivate: [AuthGuard],
     }, {
       path: 'layout',
       data: {
         title: 'Layout',
+        canActivate: [AuthGuard],
       },
       children: [
         {
-          path: 'configuration',
-          loadChildren: 'app/+layout/configuration/configuration.module#ConfigurationModule',
-          data: {
-            title: 'Configuration'
-          }
-        }, {
-          path: 'custom',
-          loadChildren: 'app/+layout/custom/custom.module#CustomModule',
-          data: {
-            title: 'Disable Layout'
-            //disableLayout: true
-          }
-        }, {
-          path: 'content',
-          loadChildren: 'app/+layout/content/content.module#ContentModule',
-          data: {
-            title: 'Content'
-          }
-        }, {
-          path: 'header',
-          loadChildren: 'app/+layout/header/header.module#HeaderModule',
-          data: {
-            title: 'Header'
-          }
-        }, {
-          path: 'sidebar-left',
-          loadChildren: 'app/+layout/sidebar-left/sidebar-left.module#SidebarLeftModule',
-          data: {
-            title: 'Sidebar Left'
-          }
-        }, {
-          path: 'sidebar-right',
-          loadChildren: 'app/+layout/sidebar-right/sidebar-right.module#SidebarRightModule',
-          data: {
-            title: 'Sidebar Right'
-          }
-        },
+          path: '',
+          canActivateChild: [AuthGuard],
+          children: [
+            {
+              path: 'configuration',
+              loadChildren: 'app/+layout/configuration/configuration.module#ConfigurationModule',
+              data: {
+                title: 'Configuration'
+              },
+            }, {
+              path: 'custom',
+              loadChildren: 'app/+layout/custom/custom.module#CustomModule',
+              data: {
+                title: 'Disable Layout'
+                //disableLayout: true
+              }
+            }, {
+              path: 'content',
+              loadChildren: 'app/+layout/content/content.module#ContentModule',
+              data: {
+                title: 'Content'
+              }
+            }, {
+              path: 'header',
+              loadChildren: 'app/+layout/header/header.module#HeaderModule',
+              data: {
+                title: 'Header'
+              }
+            }, {
+              path: 'sidebar-left',
+              loadChildren: 'app/+layout/sidebar-left/sidebar-left.module#SidebarLeftModule',
+              data: {
+                title: 'Sidebar Left'
+              }
+            }, {
+              path: 'sidebar-right',
+              loadChildren: 'app/+layout/sidebar-right/sidebar-right.module#SidebarRightModule',
+              data: {
+                title: 'Sidebar Right'
+              }
+            },
+          ]
+        }
       ]
     }, {
       path: 'boxs',
       data: {
         title: 'Boxs',
+        canActivate: [AuthGuard],
       },
       children: [
         {
-          path: 'box',
-          loadChildren: 'app/+boxs/box-default/box-default.module#BoxDefaultModule',
-          data: {
-            title: 'Box'
+          path: '',
+          canActivateChild: [AuthGuard],
+          children: [
+          {
+            path: 'box',
+            loadChildren: 'app/+boxs/box-default/box-default.module#BoxDefaultModule',
+            data: {
+              title: 'Box'
+            }
+          }, {
+            path: 'info-box',
+            loadChildren: 'app/+boxs/box-info/box-info.module#BoxInfoModule',
+            data: {
+              title: 'Info Box'
+            }
+          }, {
+            path: 'small-box',
+            loadChildren: 'app/+boxs/box-small/box-small.module#BoxSmallModule',
+            data: {
+              title: 'Small Box'
+            }
           }
-        }, {
-          path: 'info-box',
-          loadChildren: 'app/+boxs/box-info/box-info.module#BoxInfoModule',
-          data: {
-            title: 'Info Box'
-          }
-        }, {
-          path: 'small-box',
-          loadChildren: 'app/+boxs/box-small/box-small.module#BoxSmallModule',
-          data: {
-            title: 'Small Box'
-          }
+        ]
         }
       ]}, {
         path: 'dropdown',
         loadChildren: 'app/+dropdown/dropdown.module#DropdownModule',
         data: {
           title: 'Dropdown',
-        }
+        },
+        canActivate: [AuthGuard],
       }, {
         path: 'tabs',
         loadChildren: 'app/+tabs/tabs.module#TabsModule',
         data: {
           title: 'Tabs',
-        }
+        },
+        canActivate: [AuthGuard],
       }
     ]
   }, {

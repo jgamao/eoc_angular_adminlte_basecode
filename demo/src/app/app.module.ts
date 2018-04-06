@@ -1,3 +1,7 @@
+import { AuthGuard } from './guard/auth-guard.guard';
+import { AuthService } from './services/auth.service';
+
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -20,8 +24,10 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
     AppRoutingModule,
     CoreModule,
     LayoutModule.forRoot(adminLteConf),
-    LoadingPageModule, MaterialBarModule
+    LoadingPageModule, MaterialBarModule,
+    HttpClientModule,
   ],
+  providers: [AuthGuard, AuthService],
   declarations: [
     AppComponent,
     HomeComponent

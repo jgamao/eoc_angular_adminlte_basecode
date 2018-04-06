@@ -10,7 +10,7 @@ export var adminLteConf = {
   //layout: 'normal',
   sidebarLeftMenu: [
     {label: 'MAIN NAVIGATION', separator: true},
-    {label: 'Get Started', route: '/', iconClasses: 'fa fa-road'},
+    {label: 'Get Started', route: '/', iconClasses: 'fa fa-dashboard'},
     {label: 'Layout', iconClasses: 'fa fa-th-list', children: [
       {label: 'Configuration', route: 'layout/configuration'},
       {label: 'Custom', route: 'layout/custom'},
