@@ -17,7 +17,6 @@ import { HomeComponent } from './home/home.component';
 
 import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
 
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,7 +29,7 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
   providers: [AuthGuard, AuthService],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   bootstrap: [AppComponent]
 })

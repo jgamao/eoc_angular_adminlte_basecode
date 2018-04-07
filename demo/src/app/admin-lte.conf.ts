@@ -1,5 +1,5 @@
 export var adminLteConf = {
-  skin: 'blue',
+  skin: 'green',
   //isSidebarLeftCollapsed: false,
   //isSidebarLeftExpandOnOver: false,
   //isSidebarLeftMouseOver: false,
@@ -10,7 +10,11 @@ export var adminLteConf = {
   //layout: 'normal',
   sidebarLeftMenu: [
     {label: 'MAIN NAVIGATION', separator: true},
-    {label: 'Get Started', route: '/', iconClasses: 'fa fa-dashboard'},
+    {label: 'Dashboard', route: '/', iconClasses: 'fa fa-dashboard'},
+    {label: 'Leads', route: 'leads', iconClasses: 'fa fa-address-book'},
+    {label: 'Reports', route: 'reports', iconClasses: 'fa fa-line-chart'},
+    {label: 'Site Managers', route: 'site-managers', iconClasses: 'fa fa-id-badge'},
+    {label: 'Calendar', route: 'calendar', iconClasses: 'fa fa fa-calendar'},
     {label: 'Layout', iconClasses: 'fa fa-th-list', children: [
       {label: 'Configuration', route: 'layout/configuration'},
       {label: 'Custom', route: 'layout/custom'},

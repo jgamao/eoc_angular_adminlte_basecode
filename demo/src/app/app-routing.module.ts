@@ -8,7 +8,7 @@ const routes: Routes = [
   {
   path: '',
   data: {
-      title: 'Get Started'
+      title: 'Dashboard'
   },
   children: [
     {
@@ -127,7 +127,37 @@ const routes: Routes = [
           title: 'Tabs',
         },
         canActivate: [AuthGuard],
-      }
+      }, {
+        path: 'leads',
+        loadChildren: 'app/+leads/leads.module#LeadsModule',
+        data: {
+          title: 'Leads',
+        }
+      }, {
+        path: 'lead/:id',
+        loadChildren: 'app/+lead-info/lead-info.module#LeadInfoModule',
+        data: {
+          title: 'Lead Information',
+        }
+      }, {
+        path: 'reports',
+        loadChildren: 'app/+reports/reports.module#ReportsModule',
+        data: {
+          title: 'Reports',
+        }
+      }, {
+        path: 'site-managers',
+        loadChildren: 'app/+site-managers/site-managers.module#SiteManagersModule',
+        data: {
+          title: 'Site Managers',
+        }
+      }, {
+        path: 'calendar',
+        loadChildren: 'app/+calendar/calendar.module#CalendarModule',
+        data: {
+          title: 'Calendar',
+        }
+      },
     ]
   }, {
     path: 'form',

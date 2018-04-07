@@ -29,8 +29,8 @@ export class AuthService {
         .subscribe(
             response => {
               localStorage.setItem('access_token', response['access_token']);
-              this.redirectUrl ='admin';
-              this.router.navigate(['admin']);
+              this.redirectUrl ='';
+              this.router.navigate(['']);
             },
             error => {
                 this.errors = error;
