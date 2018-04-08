@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <mk-box header="List of Leads" boxColor="green" [isCollapsable]="false" [isRemovable]="false">
+      <div class="row">
+        <div class="col-md-12">
+          <table id="example2" class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Follow Up Date & Time</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Lead Source</th>
+                <th>Created Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let lead of leads">
+                <td><input type="checkbox"></td>
+                <td>{{lead.id}}</td>
+                <td>{{!!lead.profile ? lead.profile.first_name : ''}}</td>
+                <td>{{!!lead.profile ? lead.profile.telephone_primary : ''}}</td>
+                <td>-</td>
+                <td>{{!!lead.profile ? lead.profile.email_address_primary : ''}}</td>
+                <td>{{!!lead.profile ? lead.profile.location : ''}}</td>
+                <td>{{lead.status}}</td>
+                <td>{{lead.referred_by}}</td>
+                <td>{{lead.created_at}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </mk-box>
+    <!-- /.box -->
+  </div>
+  <!-- /.col -->
+</div>
+<!-- /.row -->

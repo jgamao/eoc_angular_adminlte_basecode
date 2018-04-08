@@ -2,3 +2,57 @@
   overflow: hidden;
   min-height: 100%;
 }
+
+.login-box {
+	width: 30%;
+}
+
+.login-box-body {
+	padding: 0;
+}
+
+.login-box-wmsg {
+	padding: 25px 10px;
+	background: #00a65a;
+}
+
+.login-box-msg {
+	padding: 0;
+	text-align: left;
+	color: #fff;
+}
+
+.form {
+	padding: 20px;
+}
+
+input {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	height: 45px;
+}
+
+input:hover, input:focus {
+	border-bottom: 1px solid #00a65a;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+button {
+	width: 100px;
+	border-radius: 0;
+}
+
+.login-icons {
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+@media (max-width: 768px) {
+	.login-box {
+	    width: 90%;
+	    margin-top: 20px;
+	}
+}
