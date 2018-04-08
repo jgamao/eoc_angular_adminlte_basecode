@@ -132,31 +132,36 @@ const routes: Routes = [
         loadChildren: 'app/+leads/leads.module#LeadsModule',
         data: {
           title: 'Leads',
-        }
+        },
+        canActivate: [AuthGuard],
       }, {
         path: 'lead/:id',
         loadChildren: 'app/+lead-info/lead-info.module#LeadInfoModule',
         data: {
           title: 'Lead Information',
-        }
+        },
+        canActivate: [AuthGuard],
       }, {
         path: 'reports',
         loadChildren: 'app/+reports/reports.module#ReportsModule',
         data: {
           title: 'Reports',
-        }
+        },
+        canActivate: [AuthGuard],
       }, {
         path: 'site-managers',
         loadChildren: 'app/+site-managers/site-managers.module#SiteManagersModule',
         data: {
           title: 'Site Managers',
-        }
+        },
+        canActivate: [AuthGuard],
       }, {
         path: 'calendar',
         loadChildren: 'app/+calendar/calendar.module#CalendarModule',
         data: {
           title: 'Calendar',
-        }
+        },
+        canActivate: [AuthGuard],
       },
     ]
   }, {

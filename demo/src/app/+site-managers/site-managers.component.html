@@ -1,3 +1,39 @@
-<p>
-  site-managers works!
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <mk-box header="List of Site Managers" boxColor="green" [isCollapsable]="false" [isRemovable]="false">
+      <div class="row">
+        <div class="col-md-12">
+          <table id="example2" class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>User Type</th>
+                <th>Created Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let site_manager of site_managers">
+                <td><input type="checkbox"></td>
+                <td>{{site_manager.id}}</td>
+                <td>{{!!site_manager.profile ? site_manager.profile.first_name : ''}}</td>
+                <td>{{!!site_manager.profile ? site_manager.profile.telephone_primary : ''}}</td>
+                <td>{{!!site_manager.profile ? site_manager.profile.email_address_primary : ''}}</td>
+                <td>{{!!site_manager.profile ? site_manager.profile.location : ''}}</td>
+                <td>{{site_manager.user_type}}</td>
+                <td>{{site_manager.created_at}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </mk-box>
+    <!-- /.box -->
+  </div>
+  <!-- /.col -->
+</div>
+<!-- /.row -->

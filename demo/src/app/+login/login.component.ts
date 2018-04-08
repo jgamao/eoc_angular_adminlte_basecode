@@ -8,10 +8,10 @@ import { User } from '../models/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit, OnDestroy {
-
+  loading = false;
   public user = new User('','');
   public errorMsg = '';
-    bodyClasses = 'login-page';
+  bodyClasses = 'login-page';
   body: HTMLBodyElement = document.getElementsByTagName('body')[0];
 
   constructor(private _service:AuthService) { }
@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   login() {
+    this.loading = this._service.loading;
+
     if (!this._service.login(this.user)){
       this.errorMsg = 'Failed to login';
     }

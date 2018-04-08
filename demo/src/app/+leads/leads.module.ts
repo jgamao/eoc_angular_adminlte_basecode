@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { LeadsService } from '../services/leads/leads.service';
+
 import { LeadsRoutingModule } from './leads-routing.module';
 import { LeadsComponent } from './leads.component';
-import { TabsModule as MkTabsModule, BoxModule, DropdownModule } from '../../../../src';
+import { BoxModule } from '../../../../src';
 
 @NgModule({
   imports: [
     CommonModule,
     LeadsRoutingModule,
-    MkTabsModule,
     BoxModule,
-    DropdownModule
   ],
-  declarations: [LeadsComponent]
+  declarations: [LeadsComponent],
+  providers: [LeadsService]
 })
 export class LeadsModule { }

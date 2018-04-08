@@ -1,22 +1,30 @@
 <div class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="../../index2.html"><b>Admin</b>LTE</a>
+      <img src="https://i2.wp.com/www.empireonecredit.com/wp-content/uploads/2017/10/logo.png" class="img-responsive center-block">
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      <div class="form-group has-feedback">
-        <input type="email" class="form-control" [(ngModel)]="user.email_address" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      <div class="login-box-wmsg">
+        <h4 class="login-box-msg">Sign in to start your session</h4>
       </div>
 
-      <button type="button" class="form-control btn btn-success" (click)="login()">Signin</button>
+      <form class="form">
+        <div class="form-group has-feedback">
+          <input type="email" class="form-control" [(ngModel)]="user.email_address" [ngModelOptions]="{standalone: true}" autocomplete="email" placeholder="Email">
+          <span class="glyphicon glyphicon-envelope form-control-feedback login-icons"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" autocomplete="password" placeholder="Password">
+          <span class="glyphicon glyphicon-lock form-control-feedback login-icons"></span>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" class="pull-right btn btn-success" [disabled]="loading" (click)="login()">Signin</button>
+          </div>
+        </div>
+      </form>
     </div>
     <!-- /.login-box-body -->
   </div>
